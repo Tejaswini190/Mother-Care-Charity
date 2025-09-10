@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - Mother Care Charity</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    /* Gallery Images */
+    .gallery-img {
+      height: 220px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .gallery-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Section Heading */
+    #gallery h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #222;
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+    #gallery h2::after {
+      content: "";
+      width: 60px;
+      height: 3px;
+      background: #007bff;
+      display: block;
+      margin: 0.5rem auto 0;
+      border-radius: 2px;
+    }
+
+    /* Sub Headings */
+    #gallery h4 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="index.html">Mother Care</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+        <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Gallery Section -->
+<section id="gallery" class="py-5">
+  <div class="container">
+    <h2 class="text-center">Our Charity Work Gallery</h2>
+
+    <!-- Emergency -->
+    <h4 class="text-center text-danger mt-5">Emergency</h4>
+    <div class="row g-4">
+      <div class="col-md-4"><img src="./img/emergency.jpg" class="gallery-img" alt="Emergency 1"></div>
+      <div class="col-md-4"><img src="./img/emergency2.jpg" class="gallery-img" alt="Emergency 2"></div>
+      <div class="col-md-4"><img src="./img/emergency3.jpg" class="gallery-img" alt="Emergency 3"></div>
+    </div>
+
+    <!-- Blood Donation -->
+    <h4 class="text-center text-danger mt-5">Blood Donation</h4>
+    <div class="row g-4">
+      <div class="col-md-4"><img src="./img/blood.jpg" class="gallery-img" alt="Blood Donation 1"></div>
+      <div class="col-md-4"><img src="./img/blood1.jpg" class="gallery-img" alt="Blood Donation 2"></div>
+      <div class="col-md-4"><img src="./img/blood2.jpg" class="gallery-img" alt="Blood Donation 3"></div>
+    </div>
+
+    <!-- Employment -->
+    <h4 class="text-center text-primary mt-5">Employment</h4>
+    <div class="row g-4">
+      <div class="col-md-4"><img src="./img/charity10.jpg" class="gallery-img" alt="Employment 1"></div>
+      <div class="col-md-4"><img src="./img/charity11.jpg" class="gallery-img" alt="Employment 2"></div>
+      <div class="col-md-4"><img src="./img/employement.jpg" class="gallery-img" alt="Employment 3"></div>
+    </div>
+
+    <!-- Health -->
+    <h4 class="text-center text-success mt-5">Health</h4>
+    <div class="row g-4">
+      <div class="col-md-4"><img src="./img/health.jpg" class="gallery-img" alt="Health 1"></div>
+      <div class="col-md-4"><img src="./img/health2.jpg" class="gallery-img" alt="Health 2"></div>
+      <div class="col-md-4"><img src="./img/health3.jpg" class="gallery-img" alt="Health 3"></div>
+    </div>
+
+    <!-- Clothing & Shelter -->
+    <h4 class="text-center text-warning mt-5">Clothing & Shelter</h4>
+    <div class="row g-4">
+      <div class="col-md-4"><img src="./img/clothing.jpg" class="gallery-img" alt="Clothing 1"></div>
+      <div class="col-md-4"><img src="./img/clothing2.jpg" class="gallery-img" alt="Clothing 2"></div>
+      <div class="col-md-4"><img src="./img/clothing3.jpg" class="gallery-img" alt="Clothing 3"></div>
+    </div>
+
+    <!-- Disaster Relief -->
+    <h4 class="text-center text-dark mt-5">Disaster Relief</h4>
+    <div class="row g-4">
+      <div class="col-md-4"><img src="./img/disaster.jpg" class="gallery-img" alt="Disaster 1"></div>
+      <div class="col-md-4"><img src="./img/disaster2.jpg" class="gallery-img" alt="Disaster 2"></div>
+      <div class="col-md-4"><img src="./img/disaster3.jpg" class="gallery-img" alt="Disaster 3"></div>
+    </div>
+
+    <!-- Food & Hunger -->
+    <h4 class="text-center text-info mt-5">Food & Hunger</h4>
+    <div class="row g-4">
+      <div class="col-md-4"><img src="./img/food.jpg" class="gallery-img" alt="Food 1"></div>
+      <div class="col-md-4"><img src="./img/food1.jpg" class="gallery-img" alt="Food 2"></div>
+      <div class="col-md-4"><img src="./img/food2.jpg" class="gallery-img" alt="Food 3"></div>
+    </div>
+    <!-- Education -->
+    <h4 class="text-center text-info mt-5">Education</h4>
+    <div class="row g-4">
+      <div class="col-md-4"><img src="./img/study1.jpg" class="gallery-img" alt="Food 1"></div>
+      <div class="col-md-4"><img src="./img/study2.jpg" class="gallery-img" alt="Food 2"></div>
+      <div class="col-md-4"><img src="./img/study3.jpg" class="gallery-img" alt="Food 3"></div>
+    </div>
+
+
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3">
+  <p class="mb-0">&copy; 2025 Mother Care Charity. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
