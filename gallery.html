@@ -3,72 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery - Mother Care Charity</title>
+  <title>Food & Hunger | Mother Care Charity</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <style>
-    /* Gallery Images */
-    .gallery-img {
-      height: 220px;
-      width: 100%;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-    }
-    .gallery-img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
-    }
-
-    /* Section Heading */
-    #gallery h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: #222;
-      margin-bottom: 2.5rem;
-      position: relative;
-    }
-    #gallery h2::after {
-      content: "";
-      width: 60px;
-      height: 3px;
-      background: #007bff;
-      display: block;
-      margin: 0.5rem auto 0;
-      border-radius: 2px;
-    }
-
-    /* Sub Headings */
-    #gallery h4 {
-      font-size: 1.4rem;
-      font-weight: 600;
-      margin-bottom: 1.2rem;
-      text-transform: uppercase;
-    }
-  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-  <div class="container-fluid">
-    <a class="navbar-brand fw-bold" href="index.html">Mother Care</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
-        <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
-        <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
-      </ul>
-    </div>
+<header>
+  <nav>
+        <a href="index.html"><img src="./charitylogo.jpg" alt="Mother Care Logo"/></a>
+          <ul id="menu">
+      <li><a href="#home">HOME</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="index.html">CONTACT</a></li>
+      <button onclick="location.href='index.html#donate'">Donate</button>
+    </ul>
+  </nav>
+    <div class="head" id="home">
+    <h2>Together, we can</h2>
+    <h1>Build a world where we all are safe</h1>
+    <button>Read More</button>
   </div>
-</nav>
+
+</header>
 
 <!-- Gallery Section -->
 <section id="gallery" class="py-5">
@@ -110,7 +66,7 @@
     <!-- Clothing & Shelter -->
     <h4 class="text-center text-warning mt-5">Clothing & Shelter</h4>
     <div class="row g-4">
-      <div class="col-md-4"><img src="./clothing.jpg" class="gallery-img" alt="Clothing 1"></div>
+      <div class="col-md-4"><img src="./clothing4.jpg" class="gallery-img" alt="Clothing 1"></div>
       <div class="col-md-4"><img src="./clothing2.jpg" class="gallery-img" alt="Clothing 2"></div>
       <div class="col-md-4"><img src="./clothing3.jpg" class="gallery-img" alt="Clothing 3"></div>
     </div>
@@ -133,9 +89,11 @@
     <!-- Education -->
     <h4 class="text-center text-info mt-5">Education</h4>
     <div class="row g-4">
-      <div class="col-md-4"><img src="./study1.jpg" class="gallery-img" alt="Food 1"></div>
-      <div class="col-md-4"><img src="./study2.jpg" class="gallery-img" alt="Food 2"></div>
-      <div class="col-md-4"><img src="./study3.jpg" class="gallery-img" alt="Food 3"></div>
+      <div class="col-md-4"><img src="./study1.jpg" class="gallery-img" alt="Education"></div>
+      <div class="col-md-4"><img src="./study2.jpg" class="gallery-img" alt="Education"></div>
+      <div class="col-md-4"><img src="./study3.jpg" class="gallery-img" alt="Education"></div>
+      <div class="col-md-4"><img src="./edu2.jpg" class="gallery-img" alt="Education"></div>
+
     </div>
 
 
