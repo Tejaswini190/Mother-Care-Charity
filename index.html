@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MOTHER CARE</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("show");
+}
+</script>
+
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html"><img src="./img/charitylogo.jpg" alt="Mother Care Logo"/></a>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <ul id="menu">
+      <li><a href="#home">HOME</a></li>
+      <li><a href="#about">ABOUT US</a></li>
+      <li><a href="#what">WHAT WE DO</a></li>
+      <li class="dropdown">
+        <a href="#">Services ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="emergency.html">Emergency</a></li>
+          <li><a href="blooddonation.html">Blood Donation</a></li>
+          <li><a href="employement.html">Employment</a></li>
+          <li><a href="health.html">Health</a></li>
+          <li><a href="clothing&shelter.html">Clothing & Shelter</a></li>
+          <li><a href="disaster.html">Disaster</a></li>
+          <li><a href="food&hunger.html">Food & Hunger</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+      <button onclick="location.href='#donate'">Donate</button>
+    </ul>
+  </nav>
+
+  <div class="head" id="home">
+    <h2>Together, we can</h2>
+    <h1>Build a world where we all are safe</h1>
+    <button>Read More</button>
+  </div>
+</header>  
+
+<!-- Vision Section -->
+<section id="vision" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Our Vision</h2>
+    <p class="text-center mb-5">
+      At <strong>Mother Care Charity</strong>, our vision is to build a compassionate world where every child,
+      family, and community has access to education, healthcare, and the opportunity to live with dignity and hope.
+    </p>
+
+    <div class="row text-center">
+      <!-- Education -->
+      <div class="col-md-4 mb-4">
+        <img src="./img/book-fill.jpg" alt="Education for All" class="vision-icon mb-3">
+        <h5 class="mt-2">Education for All</h5>
+        <p>We aim to break the cycle of poverty by providing quality education and learning opportunities to children in need.</p>
+      </div>
+
+      <!-- Healthcare -->
+      <div class="col-md-4 mb-4">
+        <img src="./img/haertplus.jpg" alt="Healthcare & Care" class="vision-icon mb-3">
+        <h5 class="mt-2">Healthcare & Care</h5>
+        <p>We provide medical support, nutrition, and emotional care to ensure healthier and happier lives for families.</p>
+      </div>
+
+      <!-- Empowered Communities -->
+      <div class="col-md-4 mb-4">
+        <img src="./img/person.jpg" alt="Empowered Communities" class="vision-icon mb-3">
+        <h5 class="mt-2">Empowered Communities</h5>
+        <p>By creating jobs, skill training, and support systems, we empower people to stand strong and become self-reliant.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Impact -->
+<section id="impact" class="py-5">
+  <div class="container text-center">
+    <h2 class="fw-bold">Our Impact</h2>
+    <div class="row mt-4">
+      <div class="col-md-3">
+        <h3 class="text-primary">500+</h3>
+        <p>Children Educated</p>
+      </div>
+      <div class="col-md-3">
+        <h3 class="text-success">1,000+</h3>
+        <p>Families Supported</p>
+      </div>
+      <div class="col-md-3">
+        <h3 class="text-danger">200+</h3>
+        <p>Health Camps</p>
+      </div>
+      <div class="col-md-3">
+        <h3 class="text-warning">300+</h3>
+        <p>Jobs Created</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="about" id="about">
+  <div class="about-left-side">
+    
+    <h3>
+      We've worked on the lives of poor people, orphans, youth, and people with disabilities.
+    </h3>
+    <p>
+      Blood Donation, Food Donation, Clothes Donation etc.<br/><br/>
+      People from different backgrounds have a huge impact on us and our activities.<br/>
+      We help them in all possible ways to regain hope in the future.
+    </p>
+    <button>Read More</button>
+  </div>
+  <div class="about-right-side">
+    <img src="./img/charity1.jpg" alt="Helping hands - Our Impact" />
+  </div>
+</section>
+<!-- What We Do -->
+ <section class="what" id="what">
+  <h1>What We Do</h1>
+  <hr/>
+  <p><span>W</span>e plan and support amazing projects that help 
+    change the lives of children, youth and orphans across different regions of the world.
+    We focus on creating opportunities that bring lasting impact to vulnerable communities.
+    From providing food, shelter, and education to supporting healthcare and employment programs,
+    our initiatives are designed to empower individuals and families.
+  </p>
+  <button>Read More</button>
+
+<section id="services" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center fw-bold"></h2>
+    <div class="row mt-4">
+      <!-- Repeat this card block for each service -->
+      <div class="col-md-3">
+        <div class="card h-100 shadow-sm">
+          <img src="./img/charity5.jpg" class="card-img-top" alt="We Fund">
+          <div class="card-body">
+            <h5 class="card-title">We Fund</h5>
+            <p class="card-text">We believe that change begins with support. Through generous donations and 
+        transparent fundraising, we provide financial assistance to those in need.</p>
+        <button>Read More</button>
+          </div>
+        </div>
+      </div>
+             <div class="col-md-3">
+        <div class="card h-100 shadow-sm">
+          <img src="./img/charity11.jpg" class="card-img-top" alt="We Employee">
+          <div class="card-body">
+            <h5 class="card-title">We Employee</h5>
+            <p class="card-text">Empowering individuals through jobs and vocational training. 
+        We help people become self-reliant and live with dignity.</p>
+                <button>Read More</button>
+
+          </div>
+          </div>
+          </div>
+      <div class="col-md-3">
+        <div class="card h-100 shadow-sm">
+          <img src="./img/study1.jpg" class="card-img-top" alt="We Educate">
+          <div class="card-body">
+            <h5 class="card-title">We Educate</h5>
+            <p class="card-text">Education is the most powerful tool to break the cycle of poverty. 
+        We offer resources, scholarships, and mentorship programs for children and youth.</p>
+              <button>Read More</button>
+          </div>
+          </div>
+          </div>
+      <div class="col-md-3">
+        <div class="card h-100 shadow-sm">
+          <img src="./img/charity13.jpg" class="card-img-top" alt="We Care">
+          <div class="card-body">
+            <h5 class="card-title">We Care</h5>
+            <p class="card-text">We extend support to the elderly, orphans, and those in crisis through 
+        health camps, counseling services, and daily essentials.</p>
+                <button>Read More</button>
+
+          </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="action" id="donate">
+  <h3>GIVE US A HAND</h3>
+  <h1>Support us and change lives today!</h1>
+  <img src="./img/charity6.jpg" alt="give us a hand"/>
+  <button>Donate</button>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-left-side">
+    <h2>Stay with us</h2>
+    <input type="email" placeholder="Email Address "/><br/>
+    <input type="text" placeholder="Phone Number"/><br/>
+    <button>SUBMIT</button>
+    <p>...Mother Care @ Charitability Trust</p>
+  </div>
+  
+  <div class="contact-right-side">
+    <h3>Contact</h3>
+    <h4>Hyderabad, Telangana, India</h4>
+    <div class="icons">
+      <img src="./google.jpg" alt="G"/>
+      <img src="./img/facebook.jpg" alt="FB"/>
+      <img src="./img/twitter.png" alt="T"/>
+      <img src="./img/likedin.png" alt="ln"/>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
