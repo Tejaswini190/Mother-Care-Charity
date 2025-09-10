@@ -3,126 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery - Mother Care Charity</title>
+  <title>Clothing & Shelter | Mother Care Charity</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <style>
-    .gallery-img {
-      height: 220px;
-      width: 100%;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-      transition: transform 0.3s ease-in-out;
-    }
-    .gallery-img:hover {
-      transform: scale(1.05);
-    }
-  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+<header>
+  <nav>
+    <a href="index.html"><img src="./charitylogo.jpg" alt="Mother Care Logo"/></a>
+  </nav>
+</header>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="index.html">Mother Care</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownServices" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Services
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownServices">
-            <li><a class="dropdown-item" href="emergency.html">Emergency</a></li>
-            <li><a class="dropdown-item" href="blooddonation.html">Blood Donation</a></li>
-            <li><a class="dropdown-item" href="employement.html">Employment</a></li>
-            <li><a class="dropdown-item" href="health.html">Health</a></li>
-            <li><a class="dropdown-item" href="clothing&shelter.html">Clothing & Shelter</a></li>
-            <li><a class="dropdown-item" href="disaster.html">Disaster Relief</a></li>
-            <li><a class="dropdown-item" href="food&hunger.html">Food & Hunger</a></li>
-          </ul>
-        </li>
-        <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
-        <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- Gallery Section -->
-<section id="gallery" class="py-5">
+<section class="py-5 bg-light">
   <div class="container">
-    <h2 class="text-center mb-5">Our Charity Work Gallery</h2>
+    <h2 class="text-center mb-4">Clothing & Shelter</h2>
+    <p class="text-center mb-5">
+      A safe place and proper clothing are basic human rights. At <strong>Mother Care Charity</strong>, 
+      we provide warm clothes, blankets, and temporary shelters to families in need.
+    </p>
 
-    <!-- Emergency -->
-    <h4 id="emergency" class="text-center text-danger mt-5 mb-3">Emergency</h4>
-    <div class="row g-4">
-      <div class="col-md-4"><img src="./img/emergency.jpg" class="gallery-img" alt="Emergency 1"></div>
-      <div class="col-md-4"><img src="./img/emergency2.jpg" class="gallery-img" alt="Emergency 2"></div>
-      <div class="col-md-4"><img src="./img/emergency3.jpg" class="gallery-img" alt="Emergency 3"></div>
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <img src="./clothing.jpg" alt="Clothing Distribution" class="img-fluid rounded">
+      </div>
+      <div class="col-md-6">
+        <h3>Clothing Drives</h3>
+        <p>
+          We collect and distribute clothes, blankets, and footwear to underprivileged communities, 
+          especially during winters.
+        </p>
+      </div>
     </div>
 
-    <!-- Blood Donation -->
-    <h4 id="blooddonation" class="text-center text-danger mt-5 mb-3">Blood Donation</h4>
-    <div class="row g-4">
-      <div class="col-md-4"><img src="./img/blood.jpg" class="gallery-img" alt="Blood Donation 1"></div>
-      <div class="col-md-4"><img src="./img/blood1.jpg" class="gallery-img" alt="Blood Donation 2"></div>
-      <div class="col-md-4"><img src="./img/blood2.jpg" class="gallery-img" alt="Blood Donation 3"></div>
+    <div class="row align-items-center mb-5 flex-md-row-reverse">
+      <div class="col-md-6">
+        <img src="./clothing2.jpg" alt="Shelter Support" class="img-fluid rounded">
+      </div>
+      <div class="col-md-6">
+        <h3>Shelter Support</h3>
+        <p>
+          We provide temporary shelter and basic necessities for homeless individuals, 
+          ensuring safety and dignity during difficult times.
+        </p>
+      </div>
     </div>
 
-    <!-- Employment -->
-    <h4 id="employment" class="text-center text-primary mt-5 mb-3">Employment</h4>
-    <div class="row g-4">
-      <div class="col-md-4"><img src="./img/charity10.jpg" class="gallery-img" alt="Employment 1"></div>
-      <div class="col-md-4"><img src="./img/charity11.jpg" class="gallery-img" alt="Employment 2"></div>
-      <div class="col-md-4"><img src="./img/employement.jpg" class="gallery-img" alt="Employment 3"></div>
+    <div class="text-center">
+      <button class="btn btn-warning px-4" onclick="location.href='index.html#donate'">Donate Clothes & Shelter</button>
     </div>
-
-    <!-- Health -->
-    <h4 id="health" class="text-center text-success mt-5 mb-3">Health</h4>
-    <div class="row g-4">
-      <div class="col-md-4"><img src="./img/health.jpg" class="gallery-img" alt="Health 1"></div>
-      <div class="col-md-4"><img src="./img/health2.jpg" class="gallery-img" alt="Health 2"></div>
-      <div class="col-md-4"><img src="./img/health3.jpg" class="gallery-img" alt="Health 3"></div>
-    </div>
-
-    <!-- Clothing & Shelter -->
-    <h4 id="clothing" class="text-center text-warning mt-5 mb-3">Clothing & Shelter</h4>
-    <div class="row g-4">
-      <div class="col-md-4"><img src="./img/clothing.jpg" class="gallery-img" alt="Clothing 1"></div>
-      <div class="col-md-4"><img src="./img/clothing.jpg" class="gallery-img" alt="Clothing 2"></div>
-      <div class="col-md-4"><img src="./img/clothing3.jpg" class="gallery-img" alt="Clothing 3"></div>
-    </div>
-
-    <!-- Disaster Relief -->
-    <h4 id="disaster" class="text-center text-dark mt-5 mb-3">Disaster Relief</h4>
-    <div class="row g-4">
-      <div class="col-md-4"><img src="./img/disaster.jpg" class="gallery-img" alt="Disaster 1"></div>
-      <div class="col-md-4"><img src="./img/disaster2.jpg" class="gallery-img" alt="Disaster 2"></div>
-      <div class="col-md-4"><img src="./img/disaster3.jpg" class="gallery-img" alt="Disaster 3"></div>
-    </div>
-
-    <!-- Food & Hunger -->
-    <h4 id="food" class="text-center text-info mt-5 mb-3">Food & Hunger</h4>
-    <div class="row g-4">
-      <div class="col-md-4"><img src="./img/food.jpg" class="gallery-img" alt="Food 1"></div>
-      <div class="col-md-4"><img src="./img/food1.jpg" class="gallery-img" alt="Food 2"></div>
-      <div class="col-md-4"><img src="./img/food2.jpg" class="gallery-img" alt="Food 3"></div>
-    </div>
-
   </div>
 </section>
 
-<!-- Footer -->
-<footer class="bg-dark text-white text-center py-3">
-  <p class="mb-0">&copy; 2025 Mother Care Charity. All rights reserved.</p>
+<footer class="text-center py-4 bg-dark text-light">
+  <p>© 2025 Mother Care Charity | Clothing & Shelter Services</p>
 </footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
