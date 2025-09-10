@@ -1,0 +1,269 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/*HAMBURGER*/
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+@media (max-width: 768px) {
+  nav {
+    position: relative;
+  }
+  .hamburger { display: block; }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: black;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  nav ul.show { display: flex; }
+  nav ul li {
+    display: block;
+    text-align: left;
+    padding: 10px;
+  }
+  nav button { width: 100%; margin-top: 10px; }
+}
+
+/*HEADER & NAV*/
+header {
+  width: 100%;
+  height: 100vh;
+  background: url(./img/charitybg.jpg) bottom center/cover no-repeat;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+nav img {
+  width: 130px;
+  height: 80px;
+  cursor: pointer;
+}
+
+nav ul {
+  flex: 1;
+  text-align: right;
+}
+
+nav ul li {
+  display: inline-block;
+  padding: 15px;
+  position: relative;
+}
+
+nav ul li a {
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav ul li a:hover { color: #ff7657; }
+
+/* Dropdown */
+nav ul li .dropdown-menu {
+  display: none;
+  position: absolute;
+  background: whitesmoke;
+  padding: 3px;
+  top: 90%; /* 🔥 decreased gap from navbar */
+  left: 0;
+  border-radius: 8px;
+  min-width: 180px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+nav ul li:hover .dropdown-menu { display: block; }
+
+nav ul li .dropdown-menu li a {
+  color: black;
+  padding: 8px;
+  display: block;
+}
+
+/*BUTTONS*/
+button,
+.btn {
+  padding: 8px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+button { background: gray; color: white; }
+
+.btn-primary { background: #007bff; color: #fff; }
+.btn-primary:hover { background: #0056b3; }
+
+.btn-success { background: #28a745; color: #fff; }
+.btn-success:hover { background: #1e7e34; }
+
+.btn-warning { background: #ffc107; color: #222; }
+.btn-warning:hover { background: #e0a800; }
+
+.btn-danger { background: #dc3545; color: #fff; }
+.btn-danger:hover { background: #a71d2a; }
+
+/*HERO / HEAD */
+.head {
+  margin-top: 10%;
+  color: whitesmoke;
+  text-align: center;
+}
+.head h1 { font-size: 50px; }
+
+/* ABOUT */
+.about {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8% 7%;
+  background: black;
+  color: white;
+}
+.about img { max-width: 500px; border-radius: 10px; }
+
+/*VISION */
+#vision h2 {
+  font-weight: 700;
+  color: #222;
+  text-transform: uppercase;
+  position: relative;
+}
+#vision h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #28a745;
+  margin: 0.5rem auto;
+}
+#vision p { color: #555; font-size: 1.05rem; }
+
+/* Vision Icons */
+#vision .vision-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #fff;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+#vision .vision-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+#vision h5 { font-weight: 600; color: #007bff; }
+#vision .col-md-4 p { font-size: 0.95rem; color: #666; }
+
+/* WHAT WE DO */
+.what { padding: 8% 10%; background: white; }
+.cards { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 40px; }
+.box { flex: 1 1 250px; background: lightgray; color: black; padding: 20px; border-radius: 10px; }
+
+/*IMPACT*/
+#impact h3 { font-size: 2rem; font-weight: 700; }
+#impact p { font-size: 1rem; color: #666; }
+
+/*ACTION */
+.action {
+  background: white;
+  color: black;
+  text-align: center;
+  padding: 50px 20px;
+}
+.action h2 { 
+  font-size: 28px; 
+  margin-bottom: 15px; 
+}
+.action h1 { 
+  font-size: 20px;
+   margin-bottom: 25px;
+}
+.action img { 
+  max-width: 300px; 
+  border-radius: 10px; 
+}
+
+/*CONTACT*/
+.contact {
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 80px 10%;
+  flex-wrap: wrap;
+}
+.contact input {
+  padding: 10px;
+  margin: 10px 0;
+  width: 250px;
+}
+.icons img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 50%;
+  border: 2px solid blue;
+  cursor: pointer;
+}
+.icons img:hover { background: burlywood; }
+
+/*SERVICE*/
+.service-page {
+  padding: 60px 20px;
+  text-align: center;
+}
+.service-page img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+/*FOOTER*/
+footer {
+  background: #222;
+  color: #fff;
+  padding: 1px;
+  text-align: center;
+  font-size: 0.9rm;
+}
+footer p { margin: 0; }
+
+/*RESPONSIVE*/
+@media (max-width: 768px) {
+  nav ul { flex-direction: column; text-align: left; }
+  nav ul li { display: block; }
+  .about { flex-direction: column; text-align: center; }
+  .cards { flex-direction: column; }
+}
