@@ -90,7 +90,7 @@ nav ul li .dropdown-menu {
   position: absolute;
   background: whitesmoke;
   padding: 3px;
-  top: 90%; /* 🔥 decreased gap from navbar */
+  top: 90%; 
   left: 0;
   border-radius: 8px;
   min-width: 180px;
@@ -128,8 +128,8 @@ button { background: gray; color: white; }
 .btn-warning { background: #ffc107; color: #222; }
 .btn-warning:hover { background: #e0a800; }
 
-.btn-danger { background: #dc3545; color: #fff; }
-.btn-danger:hover { background: #a71d2a; }
+.btn-danger { background: blue; color: #fff; }
+.btn-danger:hover { background:bisque; }
 
 /*HERO / HEAD */
 .head {
