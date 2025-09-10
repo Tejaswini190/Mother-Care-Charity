@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Funding & Donations | Mother Care Charity</title>
+
+  <!-- Your main stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    /* small page-specific tweaks */
+    .hero {
+      background: url('./funding.jpg') center/cover no-repeat;
+      color: #fff;
+      padding: 80px 0;
+      position: relative;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; top: 0; bottom: 0;
+      background: rgba(0,0,0,0.45);
+    }
+    .hero .container { position: relative; z-index: 2; }
+    .program-card { border-radius: 12px; overflow: hidden; }
+    .program-card .card-body { min-height: 160px; }
+    .donate-big {
+      border-radius: 40px;
+      padding: 12px 30px;
+      font-weight: 700;
+    }
+    .trans-row p { margin-bottom: 0.5rem; color: #444; }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="index.html">Mother Care</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="emergency.html">Emergency</a></li>
+        <li class="nav-item"><a class="nav-link" href="blooddonation.html">Blood Donation</a></li>
+        <li class="nav-item"><a class="nav-link" href="employement.html">Employment</a></li>
+        <li class="nav-item"><a class="nav-link active" href="funding.html">Funding</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero d-flex align-items-center">
+  <div class="container text-white text-center">
+    <h1 class="display-5 fw-bold">Support Our Work — Fund Hope</h1>
+    <p class="lead mt-3">Your donations help us run educational programs, healthcare camps, emergency relief and livelihood projects.</p>
+    <div class="mt-4">
+      <a href="index.html#donate" class="btn btn-success btn-lg donate-big">Donate Now</a>
+      <a href="#how" class="btn btn-outline-light btn-lg ms-2">How Funds Are Used</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE FUND -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="text-start">What We Fund</h2>
+    <p class="text-muted mb-4">We direct funds to programs with measurable impact and full transparency.</p>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card program-card shadow-sm">
+          <img src="./education--fund.jpg" class="card-img-top" alt="Education funding">
+          <div class="card-body">
+            <h5 class="card-title">Education & School Support</h5>
+            <p class="card-text">Scholarships, school supplies, after-school classes and community learning centers for children.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card program-card shadow-sm">
+          <img src="./health-fund.jpg" class="card-img-top" alt="Health funding">
+          <div class="card-body">
+            <h5 class="card-title">Healthcare & Medical Camps</h5>
+            <p class="card-text">Mobile clinics, medicines, maternal health programs and health awareness drives.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card program-card shadow-sm">
+          <img src="./livelihood.jpg" class="card-img-top" alt="Livelihood funding">
+          <div class="card-body">
+            <h5 class="card-title">Livelihood & Skill Training</h5>
+            <p class="card-text">Vocational training, micro-grants and job placement support for youth and women.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSPARENCY / HOW FUNDS ARE USED -->
+<section id="how" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-start">How Donations Are Used</h2>
+    <div class="row trans-row mt-3">
+      <div class="col-md-6">
+        <p><strong>60% Program Costs:</strong> Direct services — education, health, food and shelters.</p>
+        <p><strong>20% Community Projects:</strong> Training, livelihoods and local partnerships.</p>
+        <p><strong>10% Emergency Relief:</strong> Rapid response for disasters and urgent medical needs.</p>
+        <p><strong>10% Admin & Fundraising:</strong> Operations, monitoring and transparent reporting.</p>
+      </div>
+      <div class="col-md-6">
+        <img src="./charity14.jpg" alt="funds usage graph" class="img-fluid rounded shadow-sm">
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <p class="text-muted">We publish quarterly reports and receipts for every funded project. For detailed reports, email <a href="mailto:info@mothercare.org">info@mothercare.org</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT STORIES -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="text-start">Impact Stories</h2>
+
+    <div class="row g-4 mt-3">
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Asha's School</h5>
+            <p class="card-text">With scholarship support, 40 children from the village enrolled in a new community school and attendance improved by 80%.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Medical Camp — March 2025</h5>
+            <p class="card-text">A single camp served 320 patients with free check-ups, medicines and vaccinations.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Tailoring Project</h5>
+            <p class="card-text">30 women completed tailoring training and 22 received sewing machines to start micro-businesses.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALL TO ACTION / DONATE -->
+<section id="donate" class="py-5 bg-light">
+  <div class="container text-center">
+    <h2>Give Us a Hand</h2>
+    <p class="mb-4">Your support ensures programs reach those who need them the most. Any amount helps.</p>
+
+    <!-- Example donation options (replace with real integration later) -->
+    <div class="d-flex justify-content-center gap-3 flex-wrap">
+      <a href="#" class="btn btn-success btn-lg donate-big">Donate ₹500</a>
+      <a href="#" class="btn btn-success btn-lg donate-big">Donate ₹1000</a>
+      <a href="#" class="btn btn-outline-secondary btn-lg">Custom Amount</a>
+    </div>
+
+    <p class="text-muted mt-3">We accept UPI, Netbanking, Card payments and cheques. Receipts will be emailed automatically.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-dark text-white text-center py-3">
+  <div class="container">
+    <p class="mb-0">&copy; 2025 Mother Care Charity. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- Bootstrap JS (bundle includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
