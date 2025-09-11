@@ -11,20 +11,18 @@
 <header>
   <nav>
     <a href="index.html"><img src="./charitylogo.jpg" alt="Mother Care Logo"/></a>
-          <ul id="menu">
-      <li><a href="#home">HOME</a></li>
-      <li><a href="#about">ABOUT Us</a></li>
-          <li><a href="disaster.html">DISASTER</a></li>
+    <ul id="menu">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="disaster.html">DISASTER</a></li>
       <li><a href="#contact">CONTACT</a></li>
-      <button onclick="location.href='index.html#donate'">Donate</button>
+      <button onclick="location.href='index.html#donate'" class="btn btn-success">Donate</button>
     </ul>
   </nav>
-    <div class="head" id="home">
+  <div class="head" id="home">
     <h2>Together, we can</h2>
     <h1>Build a world where we all are safe</h1>
-    <button>Read More</button>
+    <button class="btn btn-outline-light">Read More</button>
   </div>
-
 </header>
 
 <section class="py-5 bg-light">
@@ -36,6 +34,7 @@
       plans to help communities rebuild.
     </p>
 
+    <!-- Section 1 -->
     <div class="row align-items-center mb-5">
       <div class="col-md-6">
         <img src="./disaster.jpg" alt="Disaster Relief" class="img-fluid rounded">
@@ -45,10 +44,13 @@
         <p>
           We distribute food, water, medicine, and temporary shelter to families 
           affected by floods, earthquakes, and other disasters.
+          Man-made disasters include industrial accidents, fires, chemical leaks, and conflicts.
+
         </p>
       </div>
     </div>
 
+    <!-- Section 2 -->
     <div class="row align-items-center mb-5 flex-md-row-reverse">
       <div class="col-md-6">
         <img src="./disaster2.jpg" alt="Community Recovery" class="img-fluid rounded">
@@ -57,13 +59,51 @@
         <h3>Community Recovery</h3>
         <p>
           Beyond immediate relief, we help rebuild homes, schools, and healthcare centers 
-          to restore normalcy in disaster-hit areas.
+          to restore normalcy in disaster-hit areas.Disasters cause loss of lives, displacement, 
+          destruction of homes, and economic losses.
+
         </p>
       </div>
     </div>
 
+    <!-- Section 3 (NEW) -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <img src="./disaster4.jpg" alt="Medical Support" class="img-fluid rounded">
+      </div>
+      <div class="col-md-6">
+        <h3>Medical Support</h3>
+        <p>
+          Our teams provide first-aid, emergency medical care, and essential medicines 
+          to injured and sick individuals during crises.Floods are the most frequent natural disaster, 
+          accounting for 40% of all disasters.
+
+        </p>
+      </div>
+    </div>
+
+    <!-- Section 4 (NEW) -->
+    <div class="row align-items-center mb-5 flex-md-row-reverse">
+      <div class="col-md-6">
+        <img src="./disaster5.jpg" alt="Psychological Counseling" class="img-fluid rounded">
+      </div>
+      <div class="col-md-6">
+        <h3>Psychological Counseling</h3>
+        <p>
+          We offer counseling services to trauma-affected individuals, helping them 
+          cope with stress, fear, and emotional loss.Earthquakes cause the highest number of 
+          deaths per disaster event
+
+        </p>
+      </div>
+    </div>
+
+    <!-- Donate Button -->
     <div class="text-center">
-      <button class="btn btn-danger px-4" onclick="location.href='index.html#donate'">Support Disaster Relief</button>
+      <button class="btn px-4" style="background-color:#90ee90; color:black; border:none;" 
+              onclick="location.href='index.html#donate'">
+        Support Disaster Relief
+      </button>
     </div>
   </div>
 </section>
@@ -73,3 +113,4 @@
 </footer>
 </body>
 </html>
+
