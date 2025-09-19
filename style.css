@@ -59,7 +59,7 @@ nav {
 }
 
 nav img {
-  width: 130px;
+  width: 100px;
   height: 80px;
   cursor: pointer;
 }
@@ -220,7 +220,7 @@ button { background: gray; color: white; }
   color: white;
   display: flex;
   justify-content: space-between;
-  padding: 80px 10%;
+  padding: 60px 10%;
   flex-wrap: wrap;
 }
 .contact input {
@@ -237,6 +237,9 @@ button { background: gray; color: white; }
   cursor: pointer;
 }
 .icons img:hover { background: burlywood; }
+.contact h4{
+  font-size: small;
+}
 
 /*SERVICE*/
 .service-page {
