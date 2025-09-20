@@ -1,6 +1,3 @@
-/* ===============================
-   GLOBAL STYLES
-=================================*/
 * {
   margin: 0;
   padding: 0;
@@ -14,14 +11,12 @@ body {
   color: #333;
 }
 
-/* ===============================
-   HEADER & NAVIGATION
-=================================*/
+/*HEADER & NAVIGATION*/
 header {
   width: 100%;
   height: 100vh; /* full screen height */
   background:url(./charityy.jpg) center center;
-  background-size: cover; /* make image cover the entire area */
+  background-size: cover; 
   
 }
 
@@ -84,9 +79,7 @@ nav ul li .dropdown-menu li a {
   color: black;
 }
 
-/* ===============================
-   HAMBURGER MENU (Responsive)
-=================================*/
+/* HAMBURGER MENU (Responsive)*/
 .hamburger {
   display: none;
   font-size: 28px;
@@ -180,9 +173,7 @@ button {
   background: bisque;
 }
 
-/* ===============================
-   HERO / HEAD
-=================================*/
+/* HEAD*/
 .head {
   margin-top: 10%;
   text-align: right;
@@ -195,9 +186,7 @@ button {
   font-size: 40px;
 }
 
-/* ===============================
-   ABOUT SECTION
-=================================*/
+/*ABOUT */
 .about {
   display: flex;
   justify-content: space-between;
@@ -211,9 +200,7 @@ button {
   border-radius: 10px;
 }
 
-/* ===============================
-   VISION SECTION
-=================================*/
+/* VISION */
 #vision h2 {
   font-weight: 700;
   color: #222;
