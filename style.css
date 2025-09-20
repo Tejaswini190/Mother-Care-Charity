@@ -20,7 +20,7 @@ header {
 }
 @media (max-width: 480px) {
   header {
-    background-size: contain;
+    background-size: cover;
     background-color: #000;
   }
 }
