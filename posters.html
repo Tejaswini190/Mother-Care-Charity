@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Charity Posters Gallery</title>
+  <style>
+    :root{
+      --bg:#f7f7f9;
+      --card:#fff;
+      --accent:#2b86f6;
+      --muted:#6b7280;
+      --shadow: 0 6px 20px rgba(16,24,40,0.08);
+      --radius:12px;
+      --gap:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background:var(--bg);
+      color:#111827;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:32px;
+    }
+
+    .wrap{
+      max-width:1200px;
+      margin:0 auto;
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:20px;
+    }
+    header h1{font-size:1.25rem;margin:0}
+    header p{margin:0;color:var(--muted);font-size:0.95rem}
+
+    /* filter buttons */
+    .filters{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin:18px 0 28px 0;
+    }
+    .filters button{
+      background:#fff;
+      border:1px solid #e6e9ef;
+      padding:8px 12px;
+      border-radius:999px;
+      cursor:pointer;
+      font-size:0.95rem;
+      box-shadow:var(--shadow);
+      transition:all .18s;
+    }
+    .filters button.active{
+      background:var(--accent);
+      color:#fff;
+      transform:translateY(-2px);
+      border-color:var(--accent);
+    }
+
+    /* grid */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:var(--gap);
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      position:relative;
+      cursor:pointer;
+      display:flex;
+      flex-direction:column;
+      min-height:260px;
+    }
+    .thumb{
+      width:100%;
+      aspect-ratio: 4 / 3;
+      object-fit:cover;
+      display:block;
+      transition:transform .3s;
+    }
+    .card:hover .thumb{ transform: scale(1.03); }
+
+    .meta{
+      padding:12px 14px;
+      display:flex;
+      gap:8px;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .meta .title{ font-weight:600; font-size:0.98rem; }
+    .meta .tag{ font-size:0.85rem; color:var(--muted) }
+
+    .overlay-label{
+      position:absolute;
+      left:12px;
+      top:12px;
+      background:rgba(0,0,0,0.5);
+      color:#fff;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:0.85rem;
+      backdrop-filter: blur(4px);
+    }
+
+    /* lightbox modal */
+    .lightbox{
+      position:fixed;
+      inset:0;
+      display:none;
+      background:rgba(8,10,15,0.7);
+      align-items:center;
+      justify-content:center;
+      z-index:1000;
+      padding:24px;
+    }
+    .lightbox.open{ display:flex; }
+    .lb-inner{
+      width:min(1100px,100%);
+      max-height:90vh;
+      background:#fff;
+      border-radius:14px;
+      overflow:hidden;
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap:0;
+      box-shadow:0 30px 80px rgba(2,6,23,0.6);
+    }
+    .lb-media{
+      background:#000;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      min-height:360px;
+    }
+    .lb-media img{
+      max-width:100%;
+      max-height:90vh;
+      object-fit:contain;
+      display:block;
+    }
+    .lb-side{
+      padding:18px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .lb-title{ font-size:1.05rem; font-weight:700; }
+    .lb-desc{ color:var(--muted); flex:1; overflow:auto; font-size:0.95rem; }
+    .lb-actions{
+      display:flex;
+      gap:8px;
+      justify-content:flex-end;
+      margin-top:6px;
+    }
+    .btn{
+      padding:8px 12px;
+      border-radius:8px;
+      border:1px solid #e6e9ef;
+      background:#fff;
+      cursor:pointer;
+      font-weight:600;
+      font-size:0.95rem;
+    }
+    .btn.primary{
+      background:var(--accent); color:#fff; border-color:var(--accent);
+    }
+    .close-btn{
+      position:absolute;
+      right:12px; top:12px;
+      background:transparent;
+      color:#fff;
+      font-size:22px;
+      border:none;
+      cursor:pointer;
+    }
+
+    /* nav arrows overlay */
+    .nav-arrow{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      background:rgba(0,0,0,0.35);
+      color:#fff;
+      width:44px;height:44px;border-radius:999px;
+      display:flex;align-items:center;justify-content:center;
+      cursor:pointer;
+      border:none;
+      z-index:5;
+    }
+    .nav-arrow.left{ left:18px; }
+    .nav-arrow.right{ right:18px; }
+
+    /* responsive */
+    @media (max-width:900px){
+      .lb-inner{ grid-template-columns: 1fr; }
+      .lb-side{ max-height:38vh; overflow:auto; }
+    }
+    @media (max-width:420px){
+      body{ padding:16px; }
+    }
+
+    /* tiny helper */
+    .sr-only{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+  </style>
+</head>
+<body>
+
+  <div class="wrap" id="page">
+    <header>
+      <div>
+        <h1>Charity Posters</h1>
+        <p>Gallery of campaign posters — click any poster to open full view, download or share.</p>
+      </div>
+      <div>
+        <button id="btnAll" class="btn active">All</button>
+      </div>
+    </header>
+
+    <div class="filters" role="toolbar" aria-label="Poster categories">
+      <button class="btn active" data-filter="all">All</button>
+      <button class="btn" data-filter="fundraising">Fundraising</button>
+      <button class="btn" data-filter="awareness">Awareness</button>
+      <button class="btn" data-filter="volunteer">Volunteer</button>
+      <button class="btn" data-filter="health">Health</button>
+    </div>
+
+    <main>
+      <section class="grid" id="gallery" aria-label="Poster gallery">
+        <!-- Card 1 -->
+        <article class="card" data-category="fundraising" data-title="Donate & Transform Lives" data-desc="Join our fundraising drive to help families rebuild after floods. Every contribution helps provide shelter, food and medicines." tabindex="0">
+          <span class="overlay-label">Fundraising</span>
+          <img class="thumb" src="./donation1.jpg" alt="Donate & Transform Lives poster" loading="lazy">
+          <div class="meta">
+            <div class="title">Donate & Transform Lives</div>
+            <div class="tag">Fundraising</div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card" data-category="awareness" data-title="Vaccinate to Protect" data-desc="Community vaccination drive: protect children and elders from preventable diseases. Vaccines save lives." tabindex="0">
+          <span class="overlay-label">Awareness</span>
+          <img class="thumb" src="./emergency6.jpg" alt="Vaccinate to Protect poster" loading="lazy">
+          <div class="meta">
+            <div class="title">Vaccinate to Protect</div>
+            <div class="tag">Health</div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card" data-category="volunteer" data-title="Volunteer This Weekend" data-desc="Sign up to pack relief kits — a 4-hour shift can help hundreds. No experience required." tabindex="0">
+          <span class="overlay-label">Volunteer</span>
+          <img class="thumb" src="./emp2.jpg" alt="Volunteer This Weekend poster" loading="lazy">
+          <div class="meta">
+            <div class="title">Volunteer This Weekend</div>
+            <div class="tag">Volunteer</div>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="card" data-category="fundraising" data-title="Winter Relief Appeal" data-desc="Help us provide warm blankets and heaters to the elderly and homeless." tabindex="0">
+          <span class="overlay-label">Fundraising</span>
+          <img class="thumb" src="./funding.jpg" alt="Winter Relief Appeal poster" loading="lazy">
+          <div class="meta">
+            <div class="title">Winter Relief Appeal</div>
+            <div class="tag">Fundraising</div>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="card" data-category="health" data-title="Free Medical Camp" data-desc="Free check-ups, medicines and counseling — everyone welcome." tabindex="0">
+          <span class="overlay-label">Health</span>
+          <img class="thumb" src="./health.jpg" alt="Free Medical Camp poster" loading="lazy">
+          <div class="meta">
+            <div class="title">Free Medical Camp</div>
+            <div class="tag">Health</div>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="card" data-category="awareness" data-title="End Hunger Now" data-desc="Food distribution every Sunday. Help us reach more families." tabindex="0">
+          <span class="overlay-label">Awareness</span>
+          <img class="thumb" src="./food2.jpg" alt="End Hunger Now poster" loading="lazy">
+          <div class="meta">
+            <div class="title">End Hunger Now</div>
+            <div class="tag">Food</div>
+          </div>
+        </article>
+
+        <!-- add more cards as needed -->
+      </section>
+    </main>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Poster preview">
+    <button class="nav-arrow left" id="prevBtn" aria-label="Previous poster">‹</button>
+    <div class="lb-inner" role="document">
+      <div class="lb-media">
+        <button class="close-btn" id="closeLb" aria-label="Close">✕</button>
+        <img id="lbImage" alt="">
+      </div>
+      <aside class="lb-side">
+        <div class="lb-title" id="lbTitle">Title</div>
+        <div class="lb-desc" id="lbDesc">Description text</div>
+        <div class="lb-actions" aria-hidden="false">
+          <a id="downloadLink" class="btn" role="button" download>Download</a>
+          <button id="shareBtn" class="btn">Share</button>
+          <button id="infoBtn" class="btn">More Info</button>
+          <button class="btn primary" onclick="location.href='index.html#donate'">Donate</button>
+        </div>
+      </aside>
+    </div>
+    <button class="nav-arrow right" id="nextBtn" aria-label="Next poster">›</button>
+  </div>
+
+  <script>
+    (function(){
+      const gallery = document.getElementById('gallery');
+      const cards = Array.from(gallery.querySelectorAll('.card'));
+      const filters = Array.from(document.querySelectorAll('.filters button'));
+      const lightbox = document.getElementById('lightbox');
+      const lbImage = document.getElementById('lbImage');
+      const lbTitle = document.getElementById('lbTitle');
+      const lbDesc = document.getElementById('lbDesc');
+      const downloadLink = document.getElementById('downloadLink');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const closeLb = document.getElementById('closeLb');
+      const shareBtn = document.getElementById('shareBtn');
+
+      let currentIndex = -1;
+      // Filter logic
+      filters.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filters.forEach(b=>b.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.dataset.filter || btn.getAttribute('data-filter') || 'all';
+          cards.forEach(c => {
+            const cat = c.dataset.category || '';
+            c.style.display = (filter === 'all' || cat === filter) ? '' : 'none';
+          });
+        });
+      });
+
+      // open lightbox
+      function openLightbox(index){
+        const card = cards[index];
+        const img = card.querySelector('img');
+        lbImage.src = img.src;
+        lbImage.alt = img.alt || card.dataset.title || '';
+        lbTitle.textContent = card.dataset.title || '';
+        lbDesc.textContent = card.dataset.desc || '';
+        downloadLink.href = img.src;
+        downloadLink.setAttribute('download', (card.dataset.title || 'poster') + '.jpg');
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden','false');
+        currentIndex = index;
+        // focus management
+        closeLb.focus();
+      }
+
+      // close
+      function closeLightbox(){
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden','true');
+        currentIndex = -1;
+      }
+
+      // navigate
+      function showNext(dir){
+        if(currentIndex === -1) return;
+        const visible = cards.filter(c=>c.style.display !== 'none');
+        const currentCard = cards[currentIndex];
+        const idxInVisible = visible.indexOf(currentCard);
+        let nextIdx = (idxInVisible + (dir===1?1:-1) + visible.length) % visible.length;
+        const target = visible[nextIdx];
+        const newIndex = cards.indexOf(target);
+        openLightbox(newIndex);
+      }
+
+      // attach click & keyboard to cards
+      cards.forEach((card, i) => {
+        card.addEventListener('click', ()=> openLightbox(i));
+        card.addEventListener('keydown', (e) => {
+          if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(i); }
+        });
+      });
+
+      // nav buttons
+      prevBtn.addEventListener('click', ()=> showNext(-1));
+      nextBtn.addEventListener('click', ()=> showNext(1));
+      closeLb.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (e)=>{
+        if(e.target === lightbox) closeLightbox();
+      });
+
+      // keyboard navigation
+      document.addEventListener('keydown', (e)=>{
+        if(lightbox.classList.contains('open')){
+          if(e.key === 'Escape') closeLightbox();
+          if(e.key === 'ArrowRight') showNext(1);
+          if(e.key === 'ArrowLeft') showNext(-1);
+        }
+      });
+
+      // share (uses Web Share API when available)
+      shareBtn.addEventListener('click', async () => {
+        if(navigator.share){
+          try{
+            await navigator.share({
+              title: lbTitle.textContent,
+              text: lbDesc.textContent,
+              url: lbImage.src
+            });
+          }catch(err){}
+        } else {
+          // fallback: copy image URL
+          try{
+            await navigator.clipboard.writeText(lbImage.src);
+            alert('Image URL copied to clipboard.');
+          }catch(e){
+            alert('Sharing not supported in this browser.');
+          }
+        }
+      });
+
+      // ensure first filter active on load
+      (function init(){
+        const activeBtn = document.querySelector('.filters button.active') || filters[0];
+        activeBtn?.click();
+      })();
+
+    })();
+  </script>
+</body>
+</html>
