@@ -1,232 +1,231 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Charity Posters Gallery</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health | Mother Care Charity</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    :root{
-      --bg:#f7f7f9;
-      --card:#fff;
-      --accent:#2b86f6;
-      --muted:#6b7280;
-      --shadow: 0 6px 20px rgba(16,24,40,0.08);
-      --radius:12px;
-      --gap:18px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
-      background:var(--bg);
-      color:#111827;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      padding:32px;
-    }
 
-    .wrap{
-      max-width:1200px;
-      margin:0 auto;
-    }
+/* Header */
+.head {
+  height: 60vh;
+  background: url('./banner.jpg') center/cover no-repeat;
+  color:black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  text-align: right;
+}
 
-    header{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      margin-bottom:20px;
-    }
-    header h1{font-size:1.25rem;margin:0}
-    header p{margin:0;color:var(--muted);font-size:0.95rem}
+.head h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
 
-    /* filter buttons */
-    .filters{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin:18px 0 28px 0;
-    }
-    .filters button{
-      background:#fff;
-      border:1px solid #e6e9ef;
-      padding:8px 12px;
-      border-radius:999px;
-      cursor:pointer;
-      font-size:0.95rem;
-      box-shadow:var(--shadow);
-      transition:all .18s;
-    }
-    .filters button.active{
-      background:var(--accent);
-      color:#fff;
-      transform:translateY(-2px);
-      border-color:var(--accent);
-    }
+.head h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
 
-    /* grid */
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:var(--gap);
-    }
+.head button {
+  padding: 10px 20px;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
 
-    .card{
-      background:var(--card);
-      border-radius:var(--radius);
-      overflow:hidden;
-      box-shadow:var(--shadow);
-      position:relative;
-      cursor:pointer;
-      display:flex;
-      flex-direction:column;
-      min-height:260px;
-    }
-    .thumb{
-      width:100%;
-      aspect-ratio: 4 / 3;
-      object-fit:cover;
-      display:block;
-      transition:transform .3s;
-    }
-    .card:hover .thumb{ transform: scale(1.03); }
+.head button:hover {
+  background: white;
+  color: #007bff;
+}
 
-    .meta{
-      padding:12px 14px;
-      display:flex;
-      gap:8px;
-      align-items:center;
-      justify-content:space-between;
-    }
-    .meta .title{ font-weight:600; font-size:0.98rem; }
-    .meta .tag{ font-size:0.85rem; color:var(--muted) }
+/* Filters */
+.filters {
+  text-align: center;
+  padding: 20px;
+}
 
-    .overlay-label{
-      position:absolute;
-      left:12px;
-      top:12px;
-      background:rgba(0,0,0,0.5);
-      color:#fff;
-      padding:6px 10px;
-      border-radius:999px;
-      font-size:0.85rem;
-      backdrop-filter: blur(4px);
-    }
+.filters .btn {
+  margin: 5px;
+  border: 1px solid #007bff;
+  background: white;
+  color: #007bff;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
 
-    /* lightbox modal */
-    .lightbox{
-      position:fixed;
-      inset:0;
-      display:none;
-      background:rgba(8,10,15,0.7);
-      align-items:center;
-      justify-content:center;
-      z-index:1000;
-      padding:24px;
-    }
-    .lightbox.open{ display:flex; }
-    .lb-inner{
-      width:min(1100px,100%);
-      max-height:90vh;
-      background:#fff;
-      border-radius:14px;
-      overflow:hidden;
-      display:grid;
-      grid-template-columns: 1fr 360px;
-      gap:0;
-      box-shadow:0 30px 80px rgba(2,6,23,0.6);
-    }
-    .lb-media{
-      background:#000;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      position:relative;
-      min-height:360px;
-    }
-    .lb-media img{
-      max-width:100%;
-      max-height:90vh;
-      object-fit:contain;
-      display:block;
-    }
-    .lb-side{
-      padding:18px;
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-    }
-    .lb-title{ font-size:1.05rem; font-weight:700; }
-    .lb-desc{ color:var(--muted); flex:1; overflow:auto; font-size:0.95rem; }
-    .lb-actions{
-      display:flex;
-      gap:8px;
-      justify-content:flex-end;
-      margin-top:6px;
-    }
-    .btn{
-      padding:8px 12px;
-      border-radius:8px;
-      border:1px solid #e6e9ef;
-      background:#fff;
-      cursor:pointer;
-      font-weight:600;
-      font-size:0.95rem;
-    }
-    .btn.primary{
-      background:var(--accent); color:#fff; border-color:var(--accent);
-    }
-    .close-btn{
-      position:absolute;
-      right:12px; top:12px;
-      background:transparent;
-      color:#fff;
-      font-size:22px;
-      border:none;
-      cursor:pointer;
-    }
+.filters .btn:hover,
+.filters .btn.active {
+  background: #007bff;
+  color: white;
+}
 
-    /* nav arrows overlay */
-    .nav-arrow{
-      position:absolute;
-      top:50%;
-      transform:translateY(-50%);
-      background:rgba(0,0,0,0.35);
-      color:#fff;
-      width:44px;height:44px;border-radius:999px;
-      display:flex;align-items:center;justify-content:center;
-      cursor:pointer;
-      border:none;
-      z-index:5;
-    }
-    .nav-arrow.left{ left:18px; }
-    .nav-arrow.right{ right:18px; }
+/* Gallery Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
 
-    /* responsive */
-    @media (max-width:900px){
-      .lb-inner{ grid-template-columns: 1fr; }
-      .lb-side{ max-height:38vh; overflow:auto; }
-    }
-    @media (max-width:420px){
-      body{ padding:16px; }
-    }
+.card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: #fff;
+  transition: transform 0.3s ease;
+}
 
-    /* tiny helper */
-    .sr-only{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
-  </style>
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img.thumb {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.overlay-label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+.meta {
+  padding: 15px;
+}
+
+.meta .title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.meta .tag {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lb-inner {
+  display: flex;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 900px;
+  width: 90%;
+}
+
+.lb-media {
+  flex: 2;
+  position: relative;
+}
+
+.lb-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: red;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 5px 10px;
+}
+
+.lb-side {
+  flex: 1;
+  padding: 20px;
+}
+
+.lb-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.lb-desc {
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.lb-actions .btn {
+  display: block;
+  margin: 8px 0;
+  padding: 8px 15px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.lb-actions .btn:hover {
+  background: #0056b3;
+}
+
+/* Donate Section */
+.text-center button {
+  margin: 20px 0;
+}
+
+/* Footer */
+footer {
+  font-size: 0.9rem;
+  margin-top: 40px;
+}
+</style>
 </head>
 <body>
-
-  <div class="wrap" id="page">
-    <header>
-      <div>
-        <h1>Charity Posters</h1>
-        <p>Gallery of campaign posters — click any poster to open full view, download or share.</p>
-      </div>
-      <div>
-        <button id="btnAll" class="btn active">All</button>
-      </div>
-    </header>
+<header>
+  <nav>
+    <a href="index.html"><img src="./charity_logo-removebg-preview.png" alt="Mother Care Logo"/></a>
+    <ul id="menu">
+      <li><a href="index.html#home">HOME</a></li>
+      <li><a href="posters.html">Posters</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
+      <button onclick="location.href='index.html#donate'" class="btn btn-primary">Donate</button>
+    </ul>
+  </nav>
+  <div class="head" id="home">
+    <h2>Together, we can</h2>
+    <h1>Build a world where we all are safe</h1>
+    
+  </div>
+</header>
 
     <div class="filters" role="toolbar" aria-label="Poster categories">
       <button class="btn active" data-filter="all">All</button>
@@ -324,125 +323,16 @@
     </div>
     <button class="nav-arrow right" id="nextBtn" aria-label="Next poster">›</button>
   </div>
+    <!-- Donate Button -->
+    <div class="text-center">
+      <button class="btn btn-primary btn-lg px-5" onclick="location.href='index.html#donate'">Donate</button>
+    </div>
+  </div>
+</section>
 
-  <script>
-    (function(){
-      const gallery = document.getElementById('gallery');
-      const cards = Array.from(gallery.querySelectorAll('.card'));
-      const filters = Array.from(document.querySelectorAll('.filters button'));
-      const lightbox = document.getElementById('lightbox');
-      const lbImage = document.getElementById('lbImage');
-      const lbTitle = document.getElementById('lbTitle');
-      const lbDesc = document.getElementById('lbDesc');
-      const downloadLink = document.getElementById('downloadLink');
-      const prevBtn = document.getElementById('prevBtn');
-      const nextBtn = document.getElementById('nextBtn');
-      const closeLb = document.getElementById('closeLb');
-      const shareBtn = document.getElementById('shareBtn');
-
-      let currentIndex = -1;
-      // Filter logic
-      filters.forEach(btn => {
-        btn.addEventListener('click', () => {
-          filters.forEach(b=>b.classList.remove('active'));
-          btn.classList.add('active');
-          const filter = btn.dataset.filter || btn.getAttribute('data-filter') || 'all';
-          cards.forEach(c => {
-            const cat = c.dataset.category || '';
-            c.style.display = (filter === 'all' || cat === filter) ? '' : 'none';
-          });
-        });
-      });
-
-      // open lightbox
-      function openLightbox(index){
-        const card = cards[index];
-        const img = card.querySelector('img');
-        lbImage.src = img.src;
-        lbImage.alt = img.alt || card.dataset.title || '';
-        lbTitle.textContent = card.dataset.title || '';
-        lbDesc.textContent = card.dataset.desc || '';
-        downloadLink.href = img.src;
-        downloadLink.setAttribute('download', (card.dataset.title || 'poster') + '.jpg');
-        lightbox.classList.add('open');
-        lightbox.setAttribute('aria-hidden','false');
-        currentIndex = index;
-        // focus management
-        closeLb.focus();
-      }
-
-      // close
-      function closeLightbox(){
-        lightbox.classList.remove('open');
-        lightbox.setAttribute('aria-hidden','true');
-        currentIndex = -1;
-      }
-
-      // navigate
-      function showNext(dir){
-        if(currentIndex === -1) return;
-        const visible = cards.filter(c=>c.style.display !== 'none');
-        const currentCard = cards[currentIndex];
-        const idxInVisible = visible.indexOf(currentCard);
-        let nextIdx = (idxInVisible + (dir===1?1:-1) + visible.length) % visible.length;
-        const target = visible[nextIdx];
-        const newIndex = cards.indexOf(target);
-        openLightbox(newIndex);
-      }
-
-      // attach click & keyboard to cards
-      cards.forEach((card, i) => {
-        card.addEventListener('click', ()=> openLightbox(i));
-        card.addEventListener('keydown', (e) => {
-          if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(i); }
-        });
-      });
-
-      // nav buttons
-      prevBtn.addEventListener('click', ()=> showNext(-1));
-      nextBtn.addEventListener('click', ()=> showNext(1));
-      closeLb.addEventListener('click', closeLightbox);
-      lightbox.addEventListener('click', (e)=>{
-        if(e.target === lightbox) closeLightbox();
-      });
-
-      // keyboard navigation
-      document.addEventListener('keydown', (e)=>{
-        if(lightbox.classList.contains('open')){
-          if(e.key === 'Escape') closeLightbox();
-          if(e.key === 'ArrowRight') showNext(1);
-          if(e.key === 'ArrowLeft') showNext(-1);
-        }
-      });
-
-      // share (uses Web Share API when available)
-      shareBtn.addEventListener('click', async () => {
-        if(navigator.share){
-          try{
-            await navigator.share({
-              title: lbTitle.textContent,
-              text: lbDesc.textContent,
-              url: lbImage.src
-            });
-          }catch(err){}
-        } else {
-          // fallback: copy image URL
-          try{
-            await navigator.clipboard.writeText(lbImage.src);
-            alert('Image URL copied to clipboard.');
-          }catch(e){
-            alert('Sharing not supported in this browser.');
-          }
-        }
-      });
-
-      // ensure first filter active on load
-      (function init(){
-        const activeBtn = document.querySelector('.filters button.active') || filters[0];
-        activeBtn?.click();
-      })();
-
-    })();
-  </script>
+<footer class="text-center py-4 bg-dark text-light">
+  <p>© 2025 Mother Care Charity | K.Sudhakar chary | 8019059992</p>
+</footer>
 </body>
 </html>
+
