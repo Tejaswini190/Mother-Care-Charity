@@ -24,6 +24,7 @@ header {
     background: url(./charitybg.jpg) center center no-repeat;
     background-size: contain;   /* mobile lo cut avvakunda */
     height: 100vh;
+    background-color: #666;
     }
 }
 
