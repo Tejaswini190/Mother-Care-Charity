@@ -21,7 +21,7 @@ header {
 
 @media (max-width: 768px) {
   header {
-    background: url(./CHARITY.JPG) center center no-repeat;
+    background: url(./CHARITY.JPG) center cover no-repeat;
     background-size: contain;   /* mobile lo cut avvakunda */
     background-color: #666;
     }
