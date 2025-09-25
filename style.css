@@ -15,15 +15,14 @@ body {
 /* HEADER & NAVIGATION */
 header {
   height: 100vh;
-  background: url(./CHARITY.JPG) center center no-repeat;
+  background: url(./donation6.jpg) center center no-repeat;
   background-size: cover;  /* desktop lo full screen fill */
 }
 
 @media (max-width: 768px) {
   header {
-    background: url(./CHARITY.JPG) center cover no-repeat;
+    background: url(./donation6.jpg) center cover no-repeat;
     background-size: cover;   /* mobile lo cut avvakunda */
-    height: 100vh;
     background-color: #666;
     }
 }
