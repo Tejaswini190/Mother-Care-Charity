@@ -22,7 +22,7 @@ header {
 @media (max-width: 768px) {
   header {
     background: url(./donation6.jpg) center cover no-repeat;
-    background-size: cover;   /* mobile lo cut avvakunda */
+    background-size: contain;   /* mobile lo cut avvakunda */
     background-color: #666;
     }
 }
