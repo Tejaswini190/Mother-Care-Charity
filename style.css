@@ -70,9 +70,9 @@ nav ul li .dropdown-menu {
   left: 0;
   min-width: 180px;
   padding: 3px;
-  background: whitesmoke;
+  background:black;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: white;
   z-index: 1000;
 }
 
@@ -90,7 +90,7 @@ nav ul li .dropdown-menu li a {
 .hamburger {
   display: none;
   font-size: 28px;
-  color: white;
+  color: black;
   cursor: pointer;
   margin-left: auto;
 }
