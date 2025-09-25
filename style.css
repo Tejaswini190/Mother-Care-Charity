@@ -19,10 +19,10 @@ header {
   background-size: cover;  /* desktop lo full screen fill */
 }
 
-@media (max-width: 468px) {
+@media (max-width: 768px) {
   header {
     background: url(./CHARITY.JPG) center center no-repeat;
-    background-size: contain;   /* mobile lo cut avvakunda */
+    background-size: cover;   /* mobile lo cut avvakunda */
     height: 100vh;
     background-color: #666;
     }
