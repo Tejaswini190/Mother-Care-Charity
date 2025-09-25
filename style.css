@@ -1,4 +1,4 @@
-* {
+* { 
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -12,17 +12,18 @@ body {
   height:100%;
 }
 
-/*HEADER & NAVIGATION*/
+/* HEADER & NAVIGATION */
 header {
-  
   height: 100vh;
   background: url(./charityy.jpg) center center no-repeat;
-  background-size: cover;
+  background-size: cover;  /* desktop lo full screen fill */
 }
+
 @media (max-width: 768px) {
   header {
-    background-size: cover;
-    background-color: #000;
+    background: url(./charityy.jpg) center center no-repeat;
+    background-size: contain;   /* mobile lo cut avvakunda */
+    background-color: #000;     /* extra space black tho fill */
   }
 }
 
@@ -35,9 +36,8 @@ nav img {
   width: 100px;
   height: 90px;
   cursor: pointer;
-  background: none;   /* removes background */
+  background: none;
 }
-
 
 nav ul {
   flex: 1;
@@ -85,7 +85,7 @@ nav ul li .dropdown-menu li a {
   color: black;
 }
 
-/* HAMBURGER MENU (Responsive)*/
+/* HAMBURGER MENU (Responsive) */
 .hamburger {
   display: none;
   font-size: 28px;
@@ -129,9 +129,9 @@ nav ul li .dropdown-menu li a {
     width: 100%;
     margin-top: 10px;
   }
-
 }
-/*BUTTON*/
+
+/* BUTTON */
 button,
 .btn {
   padding: 8px 20px;
@@ -179,7 +179,7 @@ button {
   background: bisque;
 }
 
-/* HEAD*/
+/* HEAD */
 .head {
   margin-top: 10%;
   text-align: right;
@@ -192,7 +192,7 @@ button {
   font-size: 40px;
 }
 
-/*ABOUT */
+/* ABOUT */
 .about {
   display: flex;
   justify-content: space-between;
@@ -249,9 +249,7 @@ button {
   color: #666;
 }
 
-/* ===============================
-   WHAT WE DO
-=================================*/
+/* WHAT WE DO */
 .what {
   padding: 8% 10%;
   background: white;
@@ -270,9 +268,7 @@ button {
   border-radius: 10px;
 }
 
-/* ===============================
-   IMPACT SECTION
-=================================*/
+/* IMPACT SECTION */
 #impact h3 {
   font-size: 2rem;
   font-weight: 700;
@@ -282,9 +278,7 @@ button {
   color: #666;
 }
 
-/* ===============================
-   ACTION SECTION
-=================================*/
+/* ACTION SECTION */
 .action {
   background: white;
   color: black;
@@ -304,9 +298,7 @@ button {
   border-radius: 10px;
 }
 
-/* ===============================
-   CONTACT SECTION
-=================================*/
+/* CONTACT SECTION */
 .contact {
   background: black;
   color: white;
@@ -336,9 +328,7 @@ button {
   background: burlywood;
 }
 
-/* ===============================
-   SERVICE PAGE
-=================================*/
+/* SERVICE PAGE */
 .service-page {
   padding: 60px 20px;
   text-align: center;
@@ -350,9 +340,7 @@ button {
   padding: 20px;
 }
 
-/* ===============================
-   FOOTER
-=================================*/
+/* FOOTER */
 footer {
   background: #222;
   color: #fff;
@@ -364,9 +352,7 @@ footer p {
   margin: 0;
 }
 
-/* ===============================
-   RESPONSIVE ADJUSTMENTS
-=================================*/
+/* RESPONSIVE ADJUSTMENTS */
 @media (max-width: 768px) {
   nav ul {
     flex-direction: column;
