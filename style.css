@@ -19,12 +19,11 @@ header {
   background-size: cover;  /* desktop lo full screen fill */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 468px) {
   header {
     background: url(./charitybg.jpg) center center no-repeat;
     background-size: contain;   /* mobile lo cut avvakunda */
-    background-color: #000;     /* extra space black tho fill */
-  }
+    }
 }
 
 nav {
