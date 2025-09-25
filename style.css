@@ -23,6 +23,8 @@ header {
   header {
     background: url(./charitybg.jpg) center center no-repeat;
     background-size: contain;   /* mobile lo cut avvakunda */
+    display: flex;
+    height: 100vh;
     }
 }
 
