@@ -22,7 +22,7 @@ header {
 @media (max-width: 768px) {
   header {
     background: url(./CHARITY.JPG) center center no-repeat;
-    background-size: cover;   /* mobile lo cut avvakunda */
+    /*background-size: contain;   /* mobile lo cut avvakunda */
     height: 100vh;
     background-color: #666;
     }
@@ -70,9 +70,9 @@ nav ul li .dropdown-menu {
   left: 0;
   min-width: 180px;
   padding: 3px;
-  background:black;
+  background: whitesmoke;
   border-radius: 8px;
-  box-shadow: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   z-index: 1000;
 }
 
@@ -90,7 +90,7 @@ nav ul li .dropdown-menu li a {
 .hamburger {
   display: none;
   font-size: 28px;
-  color: black;
+  color: white;
   cursor: pointer;
   margin-left: auto;
 }
@@ -107,7 +107,7 @@ nav ul li .dropdown-menu li a {
   nav ul {
     display: none;
     flex-direction: column;
-    background: black;
+    background: white;
     position: absolute;
     top: 70px;
     right: 20px;
