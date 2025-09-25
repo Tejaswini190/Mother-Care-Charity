@@ -15,13 +15,13 @@ body {
 /* HEADER & NAVIGATION */
 header {
   height: 100vh;
-  background: url(./charityy.jpg) center center no-repeat;
+  background: url(./charitybg.jpg) center center no-repeat;
   background-size: cover;  /* desktop lo full screen fill */
 }
 
 @media (max-width: 768px) {
   header {
-    background: url(./charityy.jpg) center cover no-repeat;
+    background: url(./charitybg.jpg) center cover no-repeat;
     background-size: cover;   /* mobile lo cut avvakunda */
     background-color: #000;     /* extra space black tho fill */
   }
